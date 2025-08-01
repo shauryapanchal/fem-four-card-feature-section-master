@@ -1,0 +1,108 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    padding: 3rem 2rem;
+    color: hsl(212, 6%, 44%);
+    display: grid;
+    gap: 3rem;
+    justify-content: center;
+}
+
+header{
+    display: grid;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 500px;
+    gap: 0.5rem;
+}
+.bold-heading,.light-heading{
+    font-size: 1.85rem;
+    color: hsl(234, 12%, 34%);
+}
+.bold-heading{
+    font-weight: 600;
+}
+.light-heading{
+    font-weight: 200;
+}
+.card-heading{
+    color: hsl(234, 12%, 34%);
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+.card-description{
+    font-size: 0.8rem;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 5px 5px 15px #ccc;
+    padding: 2rem;
+    min-height: 250px;
+}
+img{
+    margin-top: auto;
+    margin-left: auto;
+    max-height: 50px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+    "Supervisor Builder Calculator"
+    "Supervisor Karma Calculator";
+    gap: 1.8rem;
+    max-width: 1000px;
+}
+#supervisor{
+    grid-area: Supervisor;
+    border-top: 5px solid hsl(180, 62%, 55%);
+    align-self: center;
+
+}
+#team-builder{
+    grid-area: Builder;
+    border-top: 5px solid hsl(0, 78%, 62%);
+}
+#karma{
+    grid-area: Karma;
+    border-top: 5px solid hsl(34, 97%, 64%);
+}
+#calculator{
+    grid-area: Calculator;
+    border-top: 5px solid hsl(212, 86%, 64%);
+    align-self: center;
+}
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    color: black;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media(min-width: 750px) and (max-width: 1000px){
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "Supervisor Builder"
+        "Karma Calculator";
+    }
+}
+
+@media(max-width: 750px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "Supervisor"
+        "Builder"
+        "Karma"
+        "Calculator";
+    }
+}
